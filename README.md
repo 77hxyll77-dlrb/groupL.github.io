@@ -1,9 +1,9 @@
 # groupL.github.io
-# AI Integration at XJTLU
+# AI at XJTLU
 ## Group L Project Website
 
 ### Project Topic
-1.Hahahahaha
+1.What is the usage rate of Open AI in student pre-class preparation within Learning Mall?
 
 
 ### Research Questions
