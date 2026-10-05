@@ -3,7 +3,7 @@
 ## Group L Project Website
 
 ### Project Topic
-1.What is the usage rate of Open AI in student pre-class preparation within Learning Mall?
+What is the usage rate of Open AI in student pre-class preparation within Learning Mall?
 
 
 ### Research Questions
