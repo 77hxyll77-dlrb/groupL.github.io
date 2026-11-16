@@ -24,14 +24,6 @@ The survey targeted XJTLU postgraduate students entering in 2026. In total, 110 
 4. Collect responses online.
 5. Clean the data and calculate descriptive statistics.
 
-## Research Questions
-
-1. Do you need a formative study for your project? Why or why not?
-2. Who will be your participants, and what kind of tasks will you ask them to do?
-3. If you were asked to design a study about AI integration at XJTLU with two independent variables, what would you select?
-4. Would the two variables be between-group, within-group, or mixed? How many conditions would there be?
-5. What do you care about in AI integration at XJTLU? What are the dependent variables, and what would you measure?
-6. What makes a good baseline condition for your project?
 
 ## Survey Results
 
