@@ -1,6 +1,6 @@
 # XJTLU AI in Course Preparation
 
-ADS401 · Group L Project Website · Presentation 3
+ADS401 · Group L 
 
 ## Project Topic
 
