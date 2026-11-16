@@ -1,0 +1,75 @@
+---
+layout: null
+---
+{% capture report %}{% include_relative README.md %}{% endcapture %}
+{% capture newline %}
+{% endcapture %}
+{% assign report = report | strip %}
+{% assign title_line = report | split: newline | first %}
+{% assign report_title = title_line | remove_first: '# ' | strip %}
+{% assign report_intro = report | remove_first: title_line | strip %}
+{% assign credit_line = report_intro | split: newline | first %}
+{% assign report_credit = credit_line | strip %}
+{% assign report_body = report_intro | remove_first: credit_line | strip %}
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="ADS401 Group L survey report on AI tools for course preparation at XJTLU.">
+  <title>{{ report_title | escape }} · ADS401 Group L</title>
+  <link rel="stylesheet" href="./assets/project.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to report</a>
+  <header class="site-header">
+    <div class="shell header-row">
+      <a class="site-name" href="./">{{ report_credit | escape }}</a>
+      <nav aria-label="Report sections">
+        <a href="#questionnaire-procedure">Methods</a>
+        <a href="#survey-results">Results</a>
+        <a href="#survey-figures">Figures</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <section class="hero" aria-labelledby="report-title">
+      <div class="shell hero-grid">
+        <div class="hero-copy">
+          <h1 id="report-title">{{ report_title | escape }}</h1>
+          <p>How students use AI to prepare for class and where XJTLU AI fits among the tools they choose.</p>
+          <a class="hero-link" href="#survey-results">Explore the survey results <span aria-hidden="true">↓</span></a>
+        </div>
+        <dl class="survey-stats">
+          <div><dt>Survey respondents</dt><dd>110</dd></div>
+          <div><dt>Used AI to prepare for class (89 of 110)</dt><dd>80.9%</dd></div>
+          <div><dt>Selected XJTLU AI as a usual tool (39 of 89)</dt><dd>43.8%</dd></div>
+        </dl>
+      </div>
+    </section>
+    <div class="shell report-grid">
+      <aside class="report-contents" aria-label="Contents">
+        <p>On this page</p>
+        <ul>
+          <li><a href="#project-topic">Project topic</a></li>
+          <li><a href="#questionnaire-procedure">Questionnaire procedure</a></li>
+          <li><a href="#research-questions">Research questions</a></li>
+          <li><a href="#survey-results">Survey results</a></li>
+          <li><a href="#study-limitations-and-next-steps">Limitations and next steps</a></li>
+          <li><a href="#conclusion">Conclusion</a></li>
+          <li><a href="#survey-figures">Survey figures</a></li>
+        </ul>
+      </aside>
+      <article class="report" aria-label="Survey report">
+        {{ report_body | strip | markdownify }}
+      </article>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="shell footer-row">
+      <span>{{ report_credit | escape }}</span>
+      <a href="#main">Back to top ↑</a>
+    </div>
+  </footer>
+</body>
+</html>
