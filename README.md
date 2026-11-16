@@ -6,9 +6,15 @@ ADS401 · Group L Project Website · Presentation 3
 
 How does XJTLU AI compare with other tools for course preparation, and how do respondents rate their experience with it?
 
+## Figures
+<img width="1236" height="616" alt="ai" src="https://github.com/user-attachments/assets/260f7365-edca-4b1c-ba47-1dfdb382cce1" />
+
 ## Target Participants
 
 The survey targeted XJTLU postgraduate students entering in 2026. In total, 110 people responded. We could not verify the entry year of every respondent.
+
+## Figures
+<img width="300" height="300" alt="问卷" src="https://github.com/user-attachments/assets/317bb8cc-4732-471b-8f9a-091a844a371a" />
 
 ## Questionnaire Procedure
 
