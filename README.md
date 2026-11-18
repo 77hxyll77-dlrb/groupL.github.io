@@ -6,15 +6,15 @@ ADS401 · Group L
 
 How does XJTLU AI compare with other tools for course preparation, and how do respondents rate their experience with it?
 
-## Figures
-<img width="1236" height="616" alt="ai" src="https://github.com/user-attachments/assets/260f7365-edca-4b1c-ba47-1dfdb382cce1" />
+## AI Interface
+<img width="1236" height="616" alt="Screenshot of the AI chat interface" src="https://github.com/user-attachments/assets/260f7365-edca-4b1c-ba47-1dfdb382cce1" />
 
 ## Target Participants
 
 The survey targeted XJTLU postgraduate students entering in 2026. In total, 110 people responded. We could not verify the entry year of every respondent.
 
-## Figures
-<img width="300" height="300" alt="问卷" src="https://github.com/user-attachments/assets/317bb8cc-4732-471b-8f9a-091a844a371a" />
+## Questionnaire
+<img width="300" height="300" alt="Survey questionnaire image" src="https://github.com/user-attachments/assets/317bb8cc-4732-471b-8f9a-091a844a371a" />
 
 ## Questionnaire Procedure
 
@@ -69,7 +69,7 @@ Review the detailed survey export for suggestions on improving XJTLU AI (Q14). A
 
 XJTLU AI ranked fourth among the tools respondents selected for course preparation. Thirty of the 59 respondents who rated it gave a positive rating. Estimating use and satisfaction across the 2026 postgraduate cohort would require verified entry years, broader recruitment, and ratings from confirmed users.
 
-## Figures
+## Survey Figures
 
 ![Horizontal bar chart showing 89 of 110 respondents used AI for course preparation and 21 had not.](./figure-1-ai-use.png)
 
