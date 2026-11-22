@@ -18,29 +18,39 @@ layout: null
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="ADS401 Group L survey report on AI tools for course preparation at XJTLU.">
   <title>{{ report_title | escape }} · ADS401 Group L</title>
+  <script src="./assets/report.js" defer></script>
   <link rel="stylesheet" href="./assets/project.css">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to report</a>
-  <header class="site-header">
-    <div class="shell header-row">
-      <a class="site-name" href="./">{{ report_credit | escape }}</a>
-      <nav aria-label="Report sections">
+  <header class="mast">
+    <div class="shell bar">
+      <a class="brand" href="#main">{{ report_credit | escape }}</a>
+      <nav aria-label="Report contents"><a href="#main">Home</a>
+        <a href="#project-topic">Topic</a>
+        <a href="#target-participants">Participants</a>
         <a href="#questionnaire-procedure">Methods</a>
         <a href="#survey-results">Results</a>
-        <a href="#survey-figures">Figures</a>
-      </nav>
+        <a href="#study-limitations-and-next-steps">Limitations</a>
+        <a href="#conclusion">Conclusion</a>
+        <a href="#survey-figures">Figures</a></nav>
+      <div class="sizes" role="group" aria-label="Text size" hidden>
+        <button id="smaller" aria-label="Decrease text size" title="Decrease text size">A−</button>
+        <button id="reset" aria-label="Reset text size" title="Reset text size">100%</button>
+        <button id="larger" aria-label="Increase text size" title="Increase text size">A+</button>
+      </div>
     </div>
   </header>
   <main id="main">
     <section class="hero" aria-labelledby="report-title">
       <div class="shell hero-grid">
         <div class="hero-copy">
+          <p class="credit">ADS401 · Postgraduate survey</p>
           <h1 id="report-title">{{ report_title | escape }}</h1>
           <p>How students use AI to prepare for class and where XJTLU AI fits among the tools they choose.</p>
-          <a class="hero-link" href="#survey-results">Explore the survey results <span aria-hidden="true">↓</span></a>
+          <a class="hero-link" href="#survey-results">Explore results <span aria-hidden="true">↓</span></a>
         </div>
-        <dl class="survey-stats">
+        <dl class="survey-stats" aria-label="Survey highlights">
           <div><dt>Survey respondents</dt><dd>110</dd></div>
           <div><dt>Used AI to prepare for class (89 of 110)</dt><dd>80.9%</dd></div>
           <div><dt>Selected XJTLU AI as a usual tool (39 of 89)</dt><dd>43.8%</dd></div>
@@ -48,18 +58,7 @@ layout: null
       </div>
     </section>
     <div class="shell report-grid">
-      <aside class="report-contents" aria-label="Contents">
-        <p>On this page</p>
-        <ul>
-          <li><a href="#project-topic">Project topic</a></li>
-          <li><a href="#questionnaire-procedure">Questionnaire procedure</a></li>
-          <li><a href="#research-questions">Research questions</a></li>
-          <li><a href="#survey-results">Survey results</a></li>
-          <li><a href="#study-limitations-and-next-steps">Limitations and next steps</a></li>
-          <li><a href="#conclusion">Conclusion</a></li>
-          <li><a href="#survey-figures">Survey figures</a></li>
-        </ul>
-      </aside>
+      
       <article class="report" aria-label="Survey report">
         {{ report_body | strip | markdownify }}
       </article>

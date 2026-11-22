@@ -6,15 +6,17 @@ ADS401 · Group L
 
 How does XJTLU AI compare with other tools for course preparation, and how do respondents rate their experience with it?
 
-## AI Interface
-<img width="1236" height="616" alt="Screenshot of the AI chat interface" src="https://github.com/user-attachments/assets/260f7365-edca-4b1c-ba47-1dfdb382cce1" />
+### AI Interface
+
+<img width="1236" height="616" alt="ai" src="https://github.com/user-attachments/assets/260f7365-edca-4b1c-ba47-1dfdb382cce1" />
 
 ## Target Participants
 
 The survey targeted XJTLU postgraduate students entering in 2026. In total, 110 people responded. We could not verify the entry year of every respondent.
 
-## Questionnaire
-<img width="300" height="300" alt="Survey questionnaire image" src="https://github.com/user-attachments/assets/317bb8cc-4732-471b-8f9a-091a844a371a" />
+### Questionnaire
+
+<img width="300" height="300" alt="问卷" src="https://github.com/user-attachments/assets/317bb8cc-4732-471b-8f9a-091a844a371a" />
 
 ## Questionnaire Procedure
 
@@ -24,14 +26,6 @@ The survey targeted XJTLU postgraduate students entering in 2026. In total, 110 
 4. Collect responses online.
 5. Clean the data and calculate descriptive statistics.
 
-## Research Questions
-
-1. Do you need a formative study for your project? Why or why not?
-2. Who will be your participants, and what kind of tasks will you ask them to do?
-3. If you were asked to design a study about AI integration at XJTLU with two independent variables, what would you select?
-4. Would the two variables be between-group, within-group, or mixed? How many conditions would there be?
-5. What do you care about in AI integration at XJTLU? What are the dependent variables, and what would you measure?
-6. What makes a good baseline condition for your project?
 
 ## Survey Results
 
