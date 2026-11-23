@@ -165,8 +165,49 @@
     .blind-detail summary { cursor: pointer; font-weight: 700; }
     .blind-detail .table-wrap { margin-top: .75rem; }
     @media (max-width: 36em) { .blind-summary { grid-template-columns: minmax(0, 1fr); } }
+    .kb-legend {
+  position: fixed;
+  z-index: 4;
+  inset: auto .75rem .75rem;
+  padding: .65rem .85rem;
+  background: #fffdfa;
+  color: #193137;
+  border: 1px solid #d7ded7;
+  border-radius: .65rem;
+  box-shadow: 0 4px 16px #19313722;
+  font-size: .85rem;
+  line-height: 1.4;
+}
+
+.kb-legend p { margin: 0; }
+.kb-legend p + p { margin-top: .3rem; }
+.kb-legend .kb-plus { color: #166867; }
+.kb-legend .kb-minus { color: #9d492f; }
+
+@media screen and (max-width: 74.999em) {
+  body { padding-bottom: 7rem; }
+}
+
+@media screen and (min-width: 75em) {
+  .kb-legend {
+    inset: 50% 1rem auto auto;
+    width: 11.5rem;
+    transform: translateY(-50%);
+  }
+
+  /* Reserve room for the legend beside the page content. */
+  .wrap {
+    width: min(72rem, calc(100% - 15rem));
+    margin-left: max(1.5rem, calc((100% - 84rem) / 2));
+    margin-right: auto;
+  }
+}
+
+@media print {
+  .kb-legend { display: none; }
+}
   </style>
-</head>
+ </head>
 <body id="home">
   <a class="skip" href="#main">Skip to content</a>
   <header class="site-header">
@@ -270,12 +311,19 @@
             </ul>
           </article>
           <article class="panel">
-            <h3>Task 2 · Course design</h3>
-            <ul>
-              <li>Draft learning objectives and content modules.</li>
-              <li>Propose teaching activities and assessments, and identify supporting materials.</li>
-            </ul>
-          </article>
+  <h3>Task 2 · Systematic Course Design</h3>
+  <p>
+    Participants received an ADS401-related course or system design brief
+    specifying the target audience, course duration, and topic scope.
+    They used AI to draft a course design that included:
+  </p>
+  <ol>
+    <li>Course objectives and intended learning outcomes.</li>
+    <li>Content modules and how the knowledge was organised.</li>
+    <li>Teaching activities and assessment methods.</li>
+    <li>Supporting materials or rationale for each module.</li>
+  </ol>
+</article>
         </div>
         <p class="post-task"><strong>Pre-task questionnaire.</strong> The study design included questions about students’ backgrounds, preparation habits and expectations for AI-assisted preparation.</p>
         <p class="post-task"><strong>Post-task questionnaire.</strong> Participants rated usability, user experience and workload. The analysis used 24 completed questionnaires and grouped respondents by the chat condition they reported using.</p>
@@ -456,6 +504,10 @@
     else window.addEventListener("resize", measureHeader);
     applySize();
   </script>
+  <aside class="kb-legend" aria-label="Study group definitions">
+  <p><strong class="kb-plus">KB+</strong> · XJTLU AI with the ADS401 course knowledge base</p>
+  <p><strong class="kb-minus">KB−</strong> · General XJTLU AI chat without the course knowledge base</p>
+</aside>
 </body>
 </html>
 
