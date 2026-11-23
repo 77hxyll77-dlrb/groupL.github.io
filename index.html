@@ -157,6 +157,14 @@
       .hero, .section { padding-block: 1rem; }
       .panel, tr { break-inside: avoid; }
     }
+
+    .blind-summary { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; margin-block: 1.25rem; }
+    .blind-label { border-left: .25rem solid var(--rust); padding: .65rem .85rem; background: #f7e8dc; }
+    .blind-score { color: var(--teal); font-size: 1.45rem; font-weight: 750; }
+    .blind-detail { margin-block: 1.2rem; }
+    .blind-detail summary { cursor: pointer; font-weight: 700; }
+    .blind-detail .table-wrap { margin-top: .75rem; }
+    @media (max-width: 36em) { .blind-summary { grid-template-columns: minmax(0, 1fr); } }
   </style>
 </head>
 <body id="home">
@@ -169,6 +177,7 @@
         <a href="#research-questions">Research Questions</a>
         <a href="#study-design">Study Design</a>
         <a href="#results">Results</a>
+        <a href="#blinded-scoring">Blinded Scoring</a>
         <a href="#limitations">Limitations &amp; Next Steps</a>
       </nav>
       <div class="text-size" role="group" aria-label="Text size" hidden>
@@ -232,8 +241,8 @@
     <p>
       The current analysis uses 24 post-task questionnaires. It provides
       evidence about participants’ reported experiences and workload.
-      Independent ratings and chat logs are needed to assess output quality,
-      actual task efficiency, and where difficulties arose.
+      The blinded-scoring section presents provisional ratings of task outputs.
+      Chat logs are needed to assess actual task efficiency and where difficulties arose.
     </p>
   </div>
  </section>
@@ -299,7 +308,7 @@
         <ul class="findings">
           <li><strong>Usability and workload.</strong> KB+ scored 47.71 points lower on usability and 5.55 points higher on perceived workload. It also reported less intention to continue using the tool.</li>
           <li><strong>Verifiable sources.</strong> KB+ rated its ability to find verifiable sources higher. The item-level differences in perceived course relevance, consistency of terminology and factual accuracy did not reach statistical significance.</li>
-          <li><strong>Task performance.</strong> The difference in self-rated performance did not reach statistical significance. For each task, 11 of 12 KB+ participants and 12 of 12 KB− participants reported completion. Independent ratings are needed to assess the quality of their work.</li>
+          <li><strong>Task performance.</strong> The difference in self-rated performance did not reach statistical significance. For each task, 11 of 12 KB+ participants and 12 of 12 KB− participants reported completion. See <a href="#blinded-scoring">Blinded Scoring</a> for the provisional rubric assessment of their work.</li>
         </ul>
         <div class="table-wrap" tabindex="0" role="region" aria-label="Detailed results table">
           <table>
@@ -317,6 +326,59 @@
       </div>
     </section>
 
+    <section class="section" id="blinded-scoring" aria-labelledby="blind-title">
+      <div class="wrap">
+        <h2 id="blind-title">Blinded Scoring</h2>
+        <p class="intro">We used rubric scores for the submitted work to examine whether the patterns in the questionnaires also appeared in the task outputs.</p>
+        <p class="blind-label"><strong>Provisional scoring results.</strong> The workbook labels this scoring run as an example. The figures below need to be reconciled with the original rating sheets before they can be treated as final findings.</p>
+
+        <div class="grid">
+          <article class="panel">
+            <h3>Scoring procedure</h3>
+            <p>The scoring workbook records 48 anonymised outputs from 24 participants. Two raters scored the outputs independently with group labels withheld. The five rubric dimensions used a 1–5 scale. Each participant’s two task scores were averaged for the group comparison, with 12 participants per group.</p>
+          </article>
+          <article class="panel">
+            <h3>Blinding check and rater agreement</h3>
+            <p>Rater A correctly identified 9 of the 18 outputs they guessed were from KB+ (50%). Rater B correctly identified 11 of 20 (55%). KB+ made up 24 of the 48 outputs. These percentages describe the guesses marked KB+.</p>
+            <p>The workbook reported an overall inter-rater agreement of <strong>ICC(2,k) = .922</strong> for the average rating.</p>
+          </article>
+        </div>
+
+        <div class="blind-summary">
+          <article class="panel condition">
+            <h3>Verifiability</h3>
+            <p class="blind-score">KB+ 4.00 / KB− 2.90</p>
+            <p>Higher scores reflect sources that are easier to locate and check, such as a specific chapter, page or link.</p>
+          </article>
+          <article class="panel condition control">
+            <h3>Submission readiness</h3>
+            <p class="blind-score">KB+ 1.92 / KB− 2.92</p>
+            <p>Lower scores indicate that the work needed more revision before it was ready to submit.</p>
+          </article>
+        </div>
+
+        <details class="blind-detail">
+          <summary>View all five rubric dimensions</summary>
+          <div class="table-wrap" tabindex="0" role="region" aria-label="Blinded rubric scoring table">
+            <table>
+              <caption>Mean participant scores on a 1–5 scale, 12 participants per group</caption>
+              <thead><tr><th scope="col">Rubric dimension</th><th scope="col">KB+</th><th scope="col">KB−</th><th scope="col">Reported p</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">Course relevance</th><td>3.04</td><td>3.17</td><td>.7703</td></tr>
+                <tr><th scope="row">Factual accuracy</th><td>3.08</td><td>3.12</td><td>1.0000</td></tr>
+                <tr><th scope="row">Verifiability</th><td>4.00</td><td>2.90</td><td>.0002</td></tr>
+                <tr><th scope="row">Structural completeness</th><td>3.27</td><td>3.04</td><td>.3355</td></tr>
+                <tr><th scope="row">Submission readiness</th><td>1.92</td><td>2.92</td><td>.0004</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="chart-note" style="margin-top: .6rem">Mann–Whitney U p-values from the workbook’s results table. The verifiability p-value still needs checking because the workbook’s closing note gives a different value.</p>
+        </details>
+
+        <p><strong>How this relates to the questionnaire.</strong> The provisional verifiability scores point in the same direction as students’ self-reported ability to find verifiable sources. Submission readiness captures how much revision the work needed, while the questionnaire captures how demanding the process felt. The scoring found no statistically significant difference in course relevance, factual accuracy or structural completeness.</p>
+      </div>
+    </section>
+
     <section class="section" id="limitations" aria-labelledby="limitations-title">
       <div class="wrap">
         <h2 id="limitations-title">Limitations and Next Steps</h2>
@@ -331,14 +393,14 @@
           <article class="panel">
             <h3>Next Steps</h3>
             <ul>
-              <li><strong>Independent assessment.</strong> Ask two reviewers who do not know the group assignments to independently rate accuracy, course relevance and whether sources can be verified.</li>
+              <li><strong>Rating records.</strong> Reconcile the scoring workbook with the original independent rating sheets before drawing final conclusions about task quality.</li>
               <li><strong>Workload during use.</strong> Use chat duration, the number of turns and error logs to identify which steps add workload.</li>
             </ul>
           </article>
         </div>
         <div class="sources">
           <h3>Sources</h3>
-          <p>ADS401 AI Knowledge Base Comparison Study Design, Sections 1–7. ADS401 Data Analysis Progress Report v2, Sections 2, 4 and 6–7.</p>
+          <p>ADS401 AI Knowledge Base Comparison Study Design, Sections 1–7. ADS401 Data Analysis Progress Report v2, Sections 2, 4 and 6–7. ADS401 Blinded Scoring Workbook, sheets 00–06 (provisional analysis).</p>
         </div>
       </div>
     </section>
@@ -396,3 +458,4 @@
   </script>
 </body>
 </html>
+
