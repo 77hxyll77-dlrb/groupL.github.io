@@ -3,7 +3,354 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title></title>
+  <meta name="theme-color" content="#153337">
+  <meta name="description" content="An ADS401 study of course preparation with and without an AI knowledge base.">
+  <title>ADS401 Course Knowledge Base Study | Group L</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #193137;
+      --muted: #516468;
+      --paper: #f6f3eb;
+      --white: #fffdfa;
+      --line: #d7ded7;
+      --deep: #153337;
+      --teal: #166867;
+      --mint: #d3eae0;
+      --rust: #9d492f;
+      --peach: #f0d4be;
+      --nav-height: 8rem;
+      font-family: "DM Sans", "Segoe UI", system-ui, sans-serif;
+      scroll-padding-top: calc(var(--nav-height) + 1rem);
+    }
+
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--paper); color: var(--ink); line-height: 1.65; }
+    a { color: inherit; text-underline-offset: .22em; }
+    button { font: inherit; }
+    :focus-visible { outline: 3px solid #d68a3c; outline-offset: 4px; }
+    .wrap { width: min(72rem, calc(100% - 3rem)); margin-inline: auto; }
+    .skip {
+      position: fixed; z-index: 5; top: .5rem; left: .5rem;
+      transform: translateY(-200%); padding: .5rem 1rem; background: var(--white);
+    }
+    .skip:focus { transform: none; }
+
+    .site-header {
+      position: sticky; top: 0; z-index: 3;
+      background: var(--paper); border-bottom: 1px solid var(--line);
+    }
+    .nav-row {
+      display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
+      gap: .35rem 1rem; min-height: 4.5rem; padding-block: .65rem;
+    }
+    .brand { font-weight: 750; text-decoration: none; white-space: nowrap; }
+    .brand span { color: var(--teal); }
+    .site-nav { display: flex; flex-wrap: wrap; gap: .25rem .35rem; }
+    .site-nav a {
+      text-decoration: none; font-size: .9rem; font-weight: 650;
+      padding: .35rem .55rem; border-radius: .35rem;
+    }
+    .site-nav a:hover { background: var(--mint); }
+    .text-size { display: flex; align-items: center; border: 1px solid #9cacaa; border-radius: .45rem; }
+    .text-size[hidden] { display: none; }
+    .text-size button {
+      color: var(--ink); background: transparent; border: 0; padding: .25rem .5rem;
+      min-height: 2rem; font-size: .85rem; font-weight: 650; cursor: pointer;
+    }
+    .text-size button:hover { background: var(--mint); }
+    .text-size button:disabled { opacity: .45; cursor: default; }
+    #text-reset { min-width: 3.55rem; font-variant-numeric: tabular-nums; }
+
+    .hero {
+      color: #fffdf8; background: radial-gradient(ellipse at 100% 100%, #275052, transparent 65%), var(--deep);
+      padding-block: clamp(3.5rem, 7vw, 7rem);
+    }
+    .hero-grid { display: grid; grid-template-columns: 1.45fr 1fr; align-items: center; gap: clamp(2rem, 6vw, 6rem); }
+    h1, h2, h3, p { margin-top: 0; }
+    h1, h2 { font-family: "DM Serif Text", Georgia, serif; font-weight: 400; }
+    h1 {
+      font-size: clamp(2.7rem, 3.5vw + 1.2rem, 5.2rem); line-height: 1.04;
+      letter-spacing: -.045em; max-width: 16ch; margin-bottom: 1.2rem; text-wrap: balance;
+    }
+    h1 span { color: #c6e9db; }
+    .hero p { color: #e0ece6; max-width: 52ch; margin-bottom: 1.35rem; }
+    .action {
+      display: inline-flex; align-items: center; gap: .75rem; color: #173634;
+      background: var(--mint); padding: .65rem 1rem; border-radius: .35rem;
+      font-weight: 750; text-decoration: none;
+    }
+    .action:hover { background: #fffdfa; }
+    .sample {
+      background: #f8f1e4; color: var(--ink);
+      padding: clamp(1.15rem, 3vw, 2rem); border-radius: .7rem; margin: 0;
+    }
+    .sample-total {
+      display: flex; align-items: baseline; flex-wrap: wrap; gap: .4rem .9rem;
+      padding-bottom: .85rem; border-bottom: 1px solid #cecac0;
+    }
+    .sample-total strong, .sample-groups strong { font-family: Georgia, serif; line-height: 1; font-weight: 400; }
+    .sample-total strong { font-size: 3.4rem; }
+    .sample-total span { font-weight: 650; }
+    .sample-groups { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; padding-top: 1.15rem; }
+    .sample-groups div { display: grid; align-content: start; gap: .4rem; }
+    .sample-groups strong { font-size: 2.05rem; }
+    .sample-groups span { font-size: .88rem; color: #405759; }
+
+    .section { padding-block: clamp(2.8rem, 5.5vw, 5.2rem); }
+    .section + .section { border-top: 1px solid var(--line); }
+    .section h2 { font-size: clamp(2rem, 2.5vw + 1rem, 3.15rem); line-height: 1.08; letter-spacing: -.035em; margin-bottom: .85rem; }
+    .section h3 { font-size: 1.14rem; line-height: 1.3; margin-bottom: .55rem; }
+    .intro { max-width: 70ch; color: var(--muted); margin-bottom: 1.45rem; }
+    .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+    .panel { min-width: 0; background: var(--white); border: 1px solid var(--line); border-radius: .65rem; padding: 1.2rem; }
+    .panel p:last-child, .panel ul:last-child { margin-bottom: 0; }
+    .condition { border-top: .25rem solid var(--teal); }
+    .condition.control { border-top-color: var(--rust); }
+    .method-note { margin: 1rem 0 1.75rem; color: var(--muted); }
+    .panel ul, .findings { padding-left: 1.2rem; }
+    li + li { margin-top: .42rem; }
+    .post-task { margin-top: 1.35rem; margin-bottom: 0; max-width: 76ch; }
+
+    #results { background: #ecefe7; }
+    .chart-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; margin: 1.4rem 0; }
+    .chart { margin: 0; }
+    .chart figcaption { margin-bottom: .8rem; }
+    .chart figcaption strong { display: block; }
+    .chart figcaption span { font-size: .84rem; color: var(--muted); }
+    .bar-row { display: grid; grid-template-columns: 3ch minmax(0, 1fr) 5.1ch; align-items: center; gap: .5rem; }
+    .bar-row + .bar-row { margin-top: .5rem; }
+    .bar-row strong { text-align: right; font-size: .9rem; font-variant-numeric: tabular-nums; }
+    .track { display: block; background: #e5e8e2; height: .6rem; border-radius: 1rem; overflow: hidden; }
+    .fill { display: block; height: 100%; width: var(--length); background: var(--teal); border-radius: 1rem; }
+    .control-bar .fill { background: var(--rust); }
+    .chart-note { margin: -.3rem 0 1.6rem; color: var(--muted); font-size: .88rem; }
+    .findings { margin: .5rem 0 1.5rem; max-width: 83ch; }
+    .table-wrap { overflow: auto; border: 1px solid var(--line); border-radius: .55rem; background: var(--white); }
+    table { width: 100%; border-collapse: collapse; font-size: .92rem; }
+    caption { text-align: left; padding: .7rem .85rem; font-weight: 700; }
+    th, td { padding: .62rem .85rem; border-top: 1px solid var(--line); text-align: left; vertical-align: top; }
+    thead { background: #e3ebe5; }
+    tbody th { font-weight: 600; min-width: 12rem; }
+    td:nth-child(2), td:nth-child(3) { font-variant-numeric: tabular-nums; white-space: nowrap; }
+    .sources { font-size: .9rem; color: var(--muted); border-top: 1px solid var(--line); margin-top: 1.5rem; padding-top: 1.15rem; }
+    .sources p { margin-bottom: 0; }
+    footer { border-top: 1px solid var(--line); }
+    .footer-row { display: flex; justify-content: space-between; flex-wrap: wrap; gap: .5rem 1rem; padding-block: 1.1rem; }
+
+    @media (max-width: 55em) {
+      .site-nav { order: 3; width: 100%; }
+      .hero-grid { grid-template-columns: minmax(0, 1fr); }
+      .sample { max-width: 31rem; }
+      .chart-grid { grid-template-columns: minmax(0, 1fr); }
+    }
+    @media (max-width: 36em) {
+      .wrap { width: calc(100% - 1.6rem); }
+      .grid { grid-template-columns: minmax(0, 1fr); }
+      .nav-row { padding-block: .45rem; }
+      .site-nav a { padding: .25rem .35rem; }
+    }
+    @media print {
+      .site-header, .skip, .action, footer { display: none; }
+      body, .hero, #results { background: white; color: black; }
+      .hero p, h1 span { color: black; }
+      .hero, .section { padding-block: 1rem; }
+      .panel, tr { break-inside: avoid; }
+    }
+  </style>
 </head>
-<body></body>
+<body id="home">
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="wrap nav-row">
+      <a class="brand" href="#home">ADS401 <span>· Group L</span></a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="#home">Home</a>
+        <a href="#study-design">Study Design</a>
+        <a href="#results">Results</a>
+        <a href="#limitations">Limitations &amp; Next Steps</a>
+      </nav>
+      <div class="text-size" role="group" aria-label="Text size" hidden>
+        <button id="text-smaller" type="button" aria-label="Decrease text size">A−</button>
+        <button id="text-reset" type="button" aria-label="Reset text size to 100%">100%</button>
+        <button id="text-larger" type="button" aria-label="Increase text size">A+</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" aria-labelledby="page-title">
+      <div class="wrap hero-grid">
+        <div>
+          <h1 id="page-title">Course Preparation <span>With an AI Knowledge Base</span></h1>
+          <p>We compared how ADS401 postgraduate students used XJTLU AI to prepare for class. The study examined access to verifiable sources, usability and workload.</p>
+          <a class="action" href="#results">Explore the results <span aria-hidden="true">↓</span></a>
+        </div>
+        <div class="sample" aria-label="Study sample">
+          <div class="sample-total"><strong>24</strong><span>completed post-task questionnaires</span></div>
+          <div class="sample-groups">
+            <div><strong>12</strong><span>KB+ · With the course knowledge base</span></div>
+            <div><strong>12</strong><span>KB− · General AI chat</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="study-design" aria-labelledby="design-title">
+      <div class="wrap">
+        <h2 id="design-title">Study Design</h2>
+        <p class="intro">Both groups used XJTLU AI. The study design specified the same underlying model, task briefs, materials and initial prompts.</p>
+        <div class="grid">
+          <article class="panel condition">
+            <h3>KB+ · Course knowledge base</h3>
+            <p>Participants used XJTLU AI with the ADS401 course knowledge base attached.</p>
+          </article>
+          <article class="panel condition control">
+            <h3>KB− · General AI chat</h3>
+            <p>Participants used general XJTLU AI chat without a course knowledge base.</p>
+          </article>
+        </div>
+        <div class="grid" style="margin-top: 1rem">
+          <article class="panel">
+            <h3>Task 1 · Course content review</h3>
+            <ul>
+              <li>Identify key points and explain unfamiliar concepts.</li>
+              <li>Evaluate an argument and write self-test questions.</li>
+            </ul>
+          </article>
+          <article class="panel">
+            <h3>Task 2 · Course design</h3>
+            <ul>
+              <li>Draft learning objectives and content modules.</li>
+              <li>Propose teaching activities and assessments, and identify supporting materials.</li>
+            </ul>
+          </article>
+        </div>
+        <p class="post-task"><strong>Pre-task questionnaire.</strong> The study design included questions about students’ backgrounds, preparation habits and expectations for AI-assisted preparation.</p>
+        <p class="post-task"><strong>Post-task questionnaire.</strong> Participants rated usability, user experience and workload. The analysis used 24 completed questionnaires and grouped respondents by the chat condition they reported using.</p>
+      </div>
+    </section>
+
+    <section class="section" id="results" aria-labelledby="results-title">
+      <div class="wrap">
+        <h2 id="results-title">Results</h2>
+        <p class="intro">Students in the knowledge-base group reported easier access to verifiable sources. They also rated the system as less usable and reported more workload.</p>
+        <div class="chart-grid">
+          <figure class="panel chart">
+            <figcaption><strong>System Usability Scale</strong><span>0–100 · Higher is better</span></figcaption>
+            <div class="bar-row"><span>KB+</span><span class="track" aria-hidden="true"><span class="fill" style="--length: 35.21%"></span></span><strong>35.21</strong></div>
+            <div class="bar-row control-bar"><span>KB−</span><span class="track" aria-hidden="true"><span class="fill" style="--length: 82.92%"></span></span><strong>82.92</strong></div>
+          </figure>
+          <figure class="panel chart">
+            <figcaption><strong>Perceived workload</strong><span>1–10 · Higher means more workload</span></figcaption>
+            <div class="bar-row"><span>KB+</span><span class="track" aria-hidden="true"><span class="fill" style="--length: 75.889%"></span></span><strong>7.83</strong></div>
+            <div class="bar-row control-bar"><span>KB−</span><span class="track" aria-hidden="true"><span class="fill" style="--length: 14.222%"></span></span><strong>2.28</strong></div>
+          </figure>
+          <figure class="panel chart">
+            <figcaption><strong>Ability to find verifiable sources</strong><span>1–5 · Higher is better</span></figcaption>
+            <div class="bar-row"><span>KB+</span><span class="track" aria-hidden="true"><span class="fill" style="--length: 85.5%"></span></span><strong>4.42</strong></div>
+            <div class="bar-row control-bar"><span>KB−</span><span class="track" aria-hidden="true"><span class="fill" style="--length: 58.25%"></span></span><strong>3.33</strong></div>
+          </figure>
+        </div>
+        <p class="chart-note">Group means, 12 participants per group. Each bar starts at the minimum of its own scale.</p>
+        <h3>Key Findings</h3>
+        <ul class="findings">
+          <li><strong>Usability and workload.</strong> KB+ scored 47.71 points lower on usability and 5.55 points higher on perceived workload. It also reported less intention to continue using the tool.</li>
+          <li><strong>Verifiable sources.</strong> KB+ rated its ability to find verifiable sources higher. The item-level differences in perceived course relevance, consistency of terminology and factual accuracy did not reach statistical significance.</li>
+          <li><strong>Task performance.</strong> The difference in self-rated performance did not reach statistical significance. For each task, 11 of 12 KB+ participants and 12 of 12 KB− participants reported completion. Independent ratings are needed to assess the quality of their work.</li>
+        </ul>
+        <div class="table-wrap" tabindex="0" role="region" aria-label="Detailed results table">
+          <table>
+            <caption>Detailed results by group</caption>
+            <thead><tr><th scope="col">Measure</th><th scope="col">KB+</th><th scope="col">KB−</th><th scope="col">Scale and interpretation</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">System Usability Scale (SUS)</th><td>35.21</td><td>82.92</td><td>0–100 · Higher is better</td></tr>
+              <tr><th scope="row">Perceived workload (NASA-TLX, mean of five dimensions)</th><td>7.83</td><td>2.28</td><td>1–10 · Higher means more workload</td></tr>
+              <tr><th scope="row">Ability to find verifiable sources (R4)</th><td>4.42</td><td>3.33</td><td>1–5 · Higher is better</td></tr>
+              <tr><th scope="row">Intention to continue using the tool</th><td>1.83</td><td>4.17</td><td>1–5 · Higher means stronger intention</td></tr>
+              <tr><th scope="row">Self-rated task performance</th><td>7.00</td><td>8.08</td><td>1–10 · Higher means better self-rated performance</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="limitations" aria-labelledby="limitations-title">
+      <div class="wrap">
+        <h2 id="limitations-title">Limitations and Next Steps</h2>
+        <div class="grid">
+          <article class="panel">
+            <h3>Study Limitations</h3>
+            <ul>
+              <li><strong>Study scope.</strong> The study covered two ADS401 tasks and 24 completed questionnaires. Most outcomes came from self-reports and describe participants’ experiences in this study.</li>
+              <li><strong>Session effects.</strong> Each of the four sessions included six participants who used the same condition. Differences between sessions or their participants may have contributed to the results.</li>
+            </ul>
+          </article>
+          <article class="panel">
+            <h3>Next Steps</h3>
+            <ul>
+              <li><strong>Independent assessment.</strong> Ask two reviewers who do not know the group assignments to independently rate accuracy, course relevance and whether sources can be verified.</li>
+              <li><strong>Workload during use.</strong> Use chat duration, the number of turns and error logs to identify which steps add workload.</li>
+            </ul>
+          </article>
+        </div>
+        <div class="sources">
+          <h3>Sources</h3>
+          <p>ADS401 AI Knowledge Base Comparison Study Design, Sections 1–7. ADS401 Data Analysis Progress Report v2, Sections 0, 2, 4 and 6–7.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-row"><span>ADS401 · Group L</span><a href="#home">Back to top ↑</a></div>
+  </footer>
+
+  <script>
+    const header = document.querySelector(".site-header");
+    const root = document.documentElement;
+    const smaller = document.getElementById("text-smaller");
+    const larger = document.getElementById("text-larger");
+    const reset = document.getElementById("text-reset");
+    const defaultSize = 100;
+    const increment = 10;
+    const minimum = 90;
+    const maximum = 140;
+    const storageKey = "ads401-reading-size";
+    let size = defaultSize;
+
+    function measureHeader() {
+      root.style.setProperty("--nav-height", header.offsetHeight + "px");
+    }
+
+    function applySize() {
+      root.style.fontSize = size + "%";
+      reset.textContent = size + "%";
+      reset.setAttribute("aria-label", "Current size " + size + "%. Reset to 100%");
+      smaller.disabled = size <= minimum;
+      larger.disabled = size >= maximum;
+      measureHeader();
+    }
+
+    function changeSize(value) {
+      size = Math.max(minimum, Math.min(maximum, value));
+      applySize();
+      try { localStorage.setItem(storageKey, String(size)); }
+      catch { /* Text size still works in this tab. */ }
+    }
+
+    try {
+      const savedSize = Number(localStorage.getItem(storageKey));
+      if (savedSize >= minimum && savedSize <= maximum && savedSize % increment === 0) size = savedSize;
+    } catch { /* Use the default size when storage is unavailable. */ }
+
+    document.querySelector(".text-size").hidden = false;
+    smaller.addEventListener("click", () => changeSize(size - increment));
+    larger.addEventListener("click", () => changeSize(size + increment));
+    reset.addEventListener("click", () => changeSize(defaultSize));
+    if ("ResizeObserver" in window) new ResizeObserver(measureHeader).observe(header);
+    else window.addEventListener("resize", measureHeader);
+    applySize();
+  </script>
+</body>
 </html>
