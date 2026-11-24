@@ -161,6 +161,7 @@
     .blind-summary { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; margin-block: 1.25rem; }
     .blind-label { border-left: .25rem solid var(--rust); padding: .65rem .85rem; background: #f7e8dc; }
     .blind-score { color: var(--teal); font-size: 1.45rem; font-weight: 750; }
+    .blind-label.ok { border-left-color: var(--teal); background: var(--mint); }
     .blind-detail { margin-block: 1.2rem; }
     .blind-detail summary { cursor: pointer; font-weight: 700; }
     .blind-detail .table-wrap { margin-top: .75rem; }
@@ -282,7 +283,7 @@
     <p>
       The current analysis uses 24 post-task questionnaires. It provides
       evidence about participants’ reported experiences and workload.
-      The blinded-scoring section presents provisional ratings of task outputs.
+      The blinded-scoring section reports validated rubric ratings of task outputs, scored blind to condition.
       Chat logs are needed to assess actual task efficiency and where difficulties arose.
     </p>
   </div>
@@ -356,7 +357,8 @@
         <ul class="findings">
           <li><strong>Usability and workload.</strong> KB+ scored 47.71 points lower on usability and 5.55 points higher on perceived workload. It also reported less intention to continue using the tool.</li>
           <li><strong>Verifiable sources.</strong> KB+ rated its ability to find verifiable sources higher. The item-level differences in perceived course relevance, consistency of terminology and factual accuracy did not reach statistical significance.</li>
-          <li><strong>Task performance.</strong> The difference in self-rated performance did not reach statistical significance. For each task, 11 of 12 KB+ participants and 12 of 12 KB− participants reported completion. See <a href="#blinded-scoring">Blinded Scoring</a> for the provisional rubric assessment of their work.</li>
+          <li><strong>Task performance.</strong> The difference in self-rated performance did not reach statistical significance. For each task, 11 of 12 KB+ participants and 12 of 12 KB− participants reported completion. See <a href="#blinded-scoring">Blinded Scoring</a> for the rubric assessment of their work.
+</li>
         </ul>
         <div class="table-wrap" tabindex="0" role="region" aria-label="Detailed results table">
           <table>
@@ -378,17 +380,17 @@
       <div class="wrap">
         <h2 id="blind-title">Blinded Scoring</h2>
         <p class="intro">We used rubric scores for the submitted work to examine whether the patterns in the questionnaires also appeared in the task outputs.</p>
-        <p class="blind-label"><strong>Provisional scoring results.</strong> The workbook labels this scoring run as an example. The figures below need to be reconciled with the original rating sheets before they can be treated as final findings.</p>
+        <p class="blind-label ok"><strong>Scoring status.</strong> The ratings below have been reconciled against both raters’ original sheets. All 48 anonymised outputs match the key, every score is a numeric 1–5 value, and all eight disagreements above one point were arbitrated and recorded. The figures are reported as findings rather than provisional results.</p>
 
         <div class="grid">
           <article class="panel">
             <h3>Scoring procedure</h3>
-            <p>The scoring workbook records 48 anonymised outputs from 24 participants. Two raters scored the outputs independently with group labels withheld. The five rubric dimensions used a 1–5 scale. Each participant’s two task scores were averaged for the group comparison, with 12 participants per group.</p>
+            <p>The scoring workbook records 48 anonymised outputs from 24 participants. Two raters scored the outputs independently with group labels withheld. The five rubric dimensions used a 1–5 scale. Each participant’s two task scores were averaged for the group comparison, with 12 participants per group.</p>            <p>Each output was scored on five dimensions, giving 240 rater-pairs of scores. The two raters worked independently and were compared only afterwards: 232 of the 240 pairs (96.7%) differed by no more than one point, and the eight pairs that differed by more than one point were resolved through a recorded arbitration decision.</p>
           </article>
           <article class="panel">
             <h3>Blinding check and rater agreement</h3>
-            <p>Rater A correctly identified 9 of the 18 outputs they guessed were from KB+ (50%). Rater B correctly identified 11 of 20 (55%). KB+ made up 24 of the 48 outputs. These percentages describe the guesses marked KB+.</p>
-            <p>The workbook reported an overall inter-rater agreement of <strong>ICC(2,k) = .922</strong> for the average rating.</p>
+            <p>Rater A correctly identified 9 of the 18 outputs they guessed were from KB+ (50%, exact binomial p = .593). Rater B correctly identified 11 of 20 (55%, p = .412). KB+ made up 24 of the 48 outputs. Neither rate differed from chance, so the condition was not reliably inferable from the outputs. The two raters also did not differ in severity (mean total 15.33 vs 15.12, Wilcoxon p = .258).</p>
+            <p>Inter-rater agreement was estimated as a two-way random, absolute-agreement, average-measures ICC — <strong>ICC(2,k)</strong> — with the 48 outputs as the unit of analysis and 95% confidence intervals from the McGraw &amp; Wong (1996) F method. The total score reached <strong>ICC(2,k) = .923</strong> [.889, .941]; dimension-level values ranged from .696 to .831, with three dimensions rating <em>good</em> and two <em>moderate</em> (Koo &amp; Li, 2016). Per-dimension intervals, weighted kappa and agreement rates are in the table below.</p>
           </article>
         </div>
 
@@ -409,21 +411,37 @@
           <summary>View all five rubric dimensions</summary>
           <div class="table-wrap" tabindex="0" role="region" aria-label="Blinded rubric scoring table">
             <table>
-              <caption>Mean participant scores on a 1–5 scale, 12 participants per group</caption>
-              <thead><tr><th scope="col">Rubric dimension</th><th scope="col">KB+</th><th scope="col">KB−</th><th scope="col">Reported p</th></tr></thead>
+              <caption>Mean participant scores (1–5 scale), 12 participants per group; p from Mann–Whitney U, Holm-adjusted across five dimensions</caption>
+              <thead><tr><th scope="col">Rubric dimension</th><th scope="col">KB+</th><th scope="col">KB−</th><th scope="col">p (Mann–Whitney)</th><th scope="col">Cohen’s d</th><th scope="col">p (Holm)</th></tr></thead>
               <tbody>
-                <tr><th scope="row">Course relevance</th><td>3.04</td><td>3.17</td><td>.7703</td></tr>
-                <tr><th scope="row">Factual accuracy</th><td>3.08</td><td>3.12</td><td>1.0000</td></tr>
-                <tr><th scope="row">Verifiability</th><td>4.00</td><td>2.90</td><td>.0002</td></tr>
-                <tr><th scope="row">Structural completeness</th><td>3.27</td><td>3.04</td><td>.3355</td></tr>
-                <tr><th scope="row">Submission readiness</th><td>1.92</td><td>2.92</td><td>.0004</td></tr>
+                <tr><th scope="row">Course relevance</th><td>3.04</td><td>3.17</td><td>.7703</td><td>−0.19</td><td>1.000</td></tr>
+                <tr><th scope="row">Factual accuracy</th><td>3.08</td><td>3.12</td><td>1.0000</td><td>−0.06</td><td>1.000</td></tr>
+                <tr><th scope="row">Verifiability</th><td>4.00</td><td>2.90</td><td>.0002</td><td>2.28</td><td>.0017</td></tr>
+                <tr><th scope="row">Structural completeness</th><td>3.27</td><td>3.04</td><td>.3355</td><td>0.42</td><td>1.000</td></tr>
+                <tr><th scope="row">Submission readiness</th><td>1.92</td><td>2.92</td><td>.0004</td><td>−1.96</td><td>.0026</td></tr>
               </tbody>
             </table>
           </div>
-          <p class="chart-note" style="margin-top: .6rem">Mann–Whitney U p-values from the workbook’s results table. The verifiability p-value still needs checking because the workbook’s closing note gives a different value.</p>
+          <p class="chart-note" style="margin-top: .6rem">Means are participant-level averages of two tasks and two raters (n = 12 per group). Positive d means KB+ scored higher. Holm adjustment was applied across the five dimensions; permutation tests reproduced the unadjusted p-values to three decimals.</p>
+
+          <div class="table-wrap" tabindex="0" role="region" aria-label="Inter-rater agreement table" style="margin-top: 1.1rem">
+            <table>
+              <caption>Inter-rater agreement across 48 outputs, 2 raters and 5 dimensions</caption>
+              <thead><tr><th scope="col">Dimension</th><th scope="col">ICC(2,k)</th><th scope="col">95% CI</th><th scope="col">Weighted κ</th><th scope="col">|A−B| ≤ 1</th><th scope="col">Interpretation</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">Course relevance</th><td>.766</td><td>.699–.801</td><td>.734</td><td>97.9%</td><td>Good</td></tr>
+                <tr><th scope="row">Factual accuracy</th><td>.720</td><td>.647–.758</td><td>.709</td><td>97.9%</td><td>Moderate</td></tr>
+                <tr><th scope="row">Verifiability</th><td>.831</td><td>.741–.876</td><td>.691</td><td>91.7%</td><td>Good</td></tr>
+                <tr><th scope="row">Structural completeness</th><td>.770</td><td>.576–.857</td><td>.524</td><td>97.9%</td><td>Good</td></tr>
+                <tr><th scope="row">Submission readiness</th><td>.696</td><td>.602–.743</td><td>.658</td><td>97.9%</td><td>Moderate</td></tr>
+                <tr><th scope="row">Total score</th><td>.923</td><td>.889–.941</td><td>.913</td><td>66.7%</td><td>Excellent</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="chart-note" style="margin-top: .6rem">Absolute-agreement ICC(2,k) with average measures; 95% CI by the F method (McGraw &amp; Wong, 1996). Weighted kappa uses quadratic weights. Interpretation follows Koo &amp; Li (2016): &lt;.50 poor, .50–.75 moderate, .75–.90 good, &gt;.90 excellent. The 66.7% for the total score is the agreement rate on the five-dimension sum, not the 96.7% cell-level rate. Aggregating each participant’s two tasks before estimating ICC gives .730 / .759 / .869 / .862 / .771, so the output-level values above are the more conservative reading.</p>
         </details>
 
-        <p><strong>How this relates to the questionnaire.</strong> The provisional verifiability scores point in the same direction as students’ self-reported ability to find verifiable sources. Submission readiness captures how much revision the work needed, while the questionnaire captures how demanding the process felt. The scoring found no statistically significant difference in course relevance, factual accuracy or structural completeness.</p>
+          <p><strong>How this relates to the questionnaire.</strong> The verifiability scores point in the same direction as students’ self-reported ability to find verifiable sources (r = .50 with item R4), and submission readiness varies with perceived usability (r = .61 with SUS) and ease of use (r = .52). The conditions did not differ in factual accuracy (3.08 vs 3.12, p = 1.000, d = −0.06), so the knowledge base did not make answers more accurate; what it changed was whether a claim could be traced to a specific chapter or page. The trade-off shows up in submission readiness: KB+ outputs were better sourced but needed more work before they could be handed in.</p>
       </div>
     </section>
 
@@ -434,6 +452,8 @@
           <article class="panel">
             <h3>Study Limitations</h3>
             <ul>
+              <li><strong>Statistical power.</strong> With 12 participants per group the study could reliably detect only large effects (α = .05, power = .80, minimum detectable d ≈ 1.20). Structural completeness (d = 0.42) and the other non-significant dimensions should be read as “not detected”, not as evidence of equivalence; no equivalence test was run.</li>
+              <li><strong>Task-level attribution.</strong> The scoring key records participant and condition but not which task each output came from, so rubric results are reported at participant level only. A task-by-condition breakdown needs the task labels recovered from the original export order.</li>
               <li><strong>Study scope.</strong> The study covered two ADS401 tasks and 24 completed questionnaires. Most outcomes came from self-reports and describe participants’ experiences in this study.</li>
               <li><strong>Session effects.</strong> Each of the four sessions included six participants who used the same condition. Differences between sessions or their participants may have contributed to the results.</li>
             </ul>
@@ -441,14 +461,15 @@
           <article class="panel">
             <h3>Next Steps</h3>
             <ul>
-              <li><strong>Rating records.</strong> Reconcile the scoring workbook with the original independent rating sheets before drawing final conclusions about task quality.</li>
+              <li><strong>Task-level analysis.</strong> Recovering the task labels for the 48 outputs would let verifiability and submission readiness be reported separately for the course review and the course design task, which is where the knowledge base is expected to help most.</li>
               <li><strong>Workload during use.</strong> Use chat duration, the number of turns and error logs to identify which steps add workload.</li>
             </ul>
           </article>
         </div>
         <div class="sources">
           <h3>Sources</h3>
-          <p>ADS401 AI Knowledge Base Comparison Study Design, Sections 1–7. ADS401 Data Analysis Progress Report v2, Sections 2, 4 and 6–7. ADS401 Blinded Scoring Workbook, sheets 00–06 (provisional analysis).</p>
+          <p>ADS401 AI Knowledge Base Comparison Study Design, Sections 1–7. ADS401 Data Analysis Progress Report v2, Sections 2, 4 and 6–7. ADS401 Blinded Scoring Workbook, revision v2, sheets 00–08 (validated analysis; ICC recomputed under ICC(2,k) absolute agreement).
+</p>
         </div>
       </div>
     </section>
