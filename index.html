@@ -207,29 +207,59 @@
 @media print {
   .kb-legend { display: none; }
 }
+    .site-header .nav-row {
+  width: min(94rem, calc(100% - 2rem));
+  margin-inline: auto;
+  gap: .4rem .65rem;
+}
+
+.site-header .site-nav {
+  align-items: center;
+  gap: .25rem .3rem;
+}
+
+.site-header .site-nav a {
+  padding-inline: .4rem;
+}
+
+.nav-end {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: .25rem .5rem;
+}
+
+.nav-end .text-size {
+  flex: 0 0 auto;
+}
   </style>
  </head>
 <body id="home">
   <a class="skip" href="#main">Skip to content</a>
   <header class="site-header">
-    <div class="wrap nav-row">
-      <a class="brand" href="#home">ADS401 <span>· Group L</span></a>
-      <nav class="site-nav" aria-label="Main navigation">
-        <a href="#home">Home</a>
-        <a href="#research-questions">Research Questions</a>
-        <a href="#study-design">Study Design</a>
-        <a href="#results">Results</a>
-        <a href="#blinded-scoring">Blinded Scoring</a>
-        <a href="#limitations">Limitations &amp; Next Steps</a>
+  <div class="wrap nav-row">
+    <a class="brand" href="#home">ADS401 <span>· Group L</span></a>
+
+    <nav class="site-nav" aria-label="Main navigation">
+      <a href="#home">Home</a>
+      <a href="#research-questions">Research Questions</a>
+      <a href="#study-design">Study Design</a>
+      <a href="#results">Results</a>
+      <a href="#blinded-scoring">Blinded Scoring</a>
+      <a href="#limitations">Limitations &amp; Next Steps</a>
+
+      <div class="nav-end">
         <a href="#study-conclusion">Summary &amp; Conclusion</a>
-      </nav>
-      <div class="text-size" role="group" aria-label="Text size" hidden>
-        <button id="text-smaller" type="button" aria-label="Decrease text size">A−</button>
-        <button id="text-reset" type="button" aria-label="Reset text size to 100%">100%</button>
-        <button id="text-larger" type="button" aria-label="Increase text size">A+</button>
+
+        <div class="text-size" role="group" aria-label="Text size" hidden>
+          <button id="text-smaller" type="button" aria-label="Decrease text size">A−</button>
+          <button id="text-reset" type="button" aria-label="Reset text size to 100%">100%</button>
+          <button id="text-larger" type="button" aria-label="Increase text size">A+</button>
+        </div>
       </div>
-    </div>
-  </header>
+    </nav>
+  </div>
+</header>
 
   <main id="main">
     <section class="hero" aria-labelledby="page-title">
