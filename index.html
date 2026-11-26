@@ -441,7 +441,7 @@
           <p class="chart-note" style="margin-top: .6rem">Absolute-agreement ICC(2,k) with average measures; 95% CI by the F method (McGraw &amp; Wong, 1996). Weighted kappa uses quadratic weights. Interpretation follows Koo &amp; Li (2016): &lt;.50 poor, .50–.75 moderate, .75–.90 good, &gt;.90 excellent. The 66.7% for the total score is the agreement rate on the five-dimension sum, not the 96.7% cell-level rate. Aggregating each participant’s two tasks before estimating ICC gives .730 / .759 / .869 / .862 / .771, so the output-level values above are the more conservative reading.</p>
         </details>
 
-          <p><strong>How this relates to the questionnaire.</strong> The verifiability scores point in the same direction as students’ self-reported ability to find verifiable sources (r = .50 with item R4), and submission readiness varies with perceived usability (r = .61 with SUS) and ease of use (r = .52). The conditions did not differ in factual accuracy (3.08 vs 3.12, p = 1.000, d = −0.06), so the knowledge base did not make answers more accurate; what it changed was whether a claim could be traced to a specific chapter or page. The trade-off shows up in submission readiness: KB+ outputs were better sourced but needed more work before they could be handed in.</p>
+          <p><strong>How this relates to the questionnaire.</strong> The verifiability scores point in the same direction as students’ self-reported ability to find verifiable sources (r = .50 with item R4), and submission readiness varies with perceived usability (r = .61 with SUS) and ease of use (r = .52). The difference in factual accuracy did not reach statistical significance (KB+ 3.08 vs KB− 3.12, p = 1.000, Cohen’s d = −0.06). KB+ outputs scored higher on verifiability, meaning their sources were easier to locate and check. The trade-off shows up in submission readiness: KB+ outputs were better sourced but needed more work before they could be handed in.</p>
       </div>
     </section>
 
@@ -466,6 +466,66 @@
             </ul>
           </article>
         </div>
+        <article class="panel" id="study-conclusion"
+         aria-labelledby="study-conclusion-title"
+         style="margin-top: 1.5rem;">
+  <h3 id="study-conclusion-title">Summary and Conclusion</h3>
+
+  <p>
+    We compared two ways for postgraduate students to prepare for ADS401
+    using XJTLU AI. The KB+ group used a course knowledge base, and the KB−
+    group used general chat. The study used the same platform and model
+    in both conditions. We analysed 24 post-task questionnaires and
+    blinded ratings of 48 task outputs, with 12 participants per group.
+  </p>
+
+  <ul>
+    <li>
+      <strong>Participant experience.</strong>
+      KB+ participants reported lower usability (SUS 35.21 vs 82.92),
+      higher perceived workload (NASA-TLX 7.83 vs 2.28), and weaker
+      intention to continue using the tool (1.83 vs 4.17).
+    </li>
+    <li>
+      <strong>Blinded ratings.</strong>
+      KB+ outputs scored higher on verifiability (4.00 vs 2.90,
+      Cohen’s d = 2.28) and lower on submission readiness
+      (1.92 vs 2.92, d = −1.96). Group differences in factual accuracy,
+      course relevance, and structural completeness did not reach
+      statistical significance.
+    </li>
+  </ul>
+
+  <p>
+    <strong>Conclusion.</strong>
+    The blinded ratings support the questionnaire finding that sources
+    were easier to check with KB+. The lower submission-readiness scores
+    indicate that KB+ outputs needed more revision under the study rubric.
+    General chat is a reasonable option when ease of use matters most.
+    The course knowledge base is worth considering when the task requires
+    traceable citations.
+  </p>
+
+  <h3>Product Recommendations</h3>
+  <p>These are proposed design changes for XJTLU AI to test.</p>
+  <ol>
+    <li>
+      <strong>Let users select a course knowledge base from general chat.</strong>
+      Show the relevant chapter, page, or link alongside claims supported
+      by course materials.
+    </li>
+    <li>
+      <strong>Make the active mode visible.</strong>
+      Show whether the answer uses general chat or course materials so
+      students can choose the mode that fits their task.
+    </li>
+    <li>
+      <strong>Explain failed retrieval.</strong>
+      Tell users when the course knowledge base returns no relevant
+      material. If the system offers a general answer, label it clearly.
+    </li>
+  </ol>
+</article>
         <div class="sources">
 <h3 id="references">References </h3>
 <ol style="padding-left: 1.6rem; overflow-wrap: anywhere;">
