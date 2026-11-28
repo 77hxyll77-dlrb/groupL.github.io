@@ -344,11 +344,6 @@
     <li>Evaluate how well one argument or proposed solution in the materials is justified.</li>
     <li>Write three questions to guide preparation or check understanding.</li>
   </ol>
-  <p>
-    <strong>Deliverable.</strong> A structured written record of the
-    participant’s understanding and evaluation. Participants could draft it
-    in the AI chat and paste it into the response form.
-  </p>
 </article>
           <article class="panel">
   <h3>Task 2 · Systematic Course Design</h3>
@@ -433,18 +428,23 @@
     <div class="grid">
       <article class="panel">
         <h3>Study Limitations</h3>
-        <ul>
-          <li><strong>Sample and assignment.</strong> Round 2 had 12 respondents per group. Students reported their own chat condition, and the analysis compared groups within this round. The effect of the interface redesign itself remains unmeasured.</li>
-          <li><strong>Survey quality.</strong> KB− SUS scores were concentrated between 60 and 70. Some item responses were highly similar within groups. The findings describe this sample, and smaller differences may be hard to detect.</li>
-          <li><strong>Measurement.</strong> Round 2 captured self-reported experiences. Task quality, learning gains and actual efficiency were outside its measurements. </li>
-        </ul>
+        <p>
+          With 24 respondents (12 per group), the study had limited power to
+          detect small-to-moderate differences. The results should be
+          interpreted as preliminary evidence from this sample.
+        </p>
+        <p>
+          The questionnaire captured self-reported experiences. Task efficiency
+          and learning gains were outside its scope.
+        </p>
       </article>
       <article class="panel">
         <h3>Next Steps</h3>
-        <ul>
-          <li><strong>Check questionnaire scoring.</strong> Reconcile the NASA-TLX item responses with the derived scores and confirm the administration and data-entry procedures.</li>
-          <li><strong>Assess work from the redesigned interface.</strong> Collect and score task outputs with group labels withheld. Preserve task labels and collect timings to assess task-specific results and efficiency.</li>
-        </ul>
+        <p>
+          Verify the NASA-TLX scores against the original item responses.
+          A larger follow-up study could record task timings and assess the
+          quality of participants’ work.
+        </p>
       </article>
     </div>
   </div>
@@ -454,15 +454,29 @@
   <div class="wrap">
     <h2 id="study-conclusion-title">Summary and Conclusion</h2>
     <article class="panel">
-      <p><strong>Round 2 questionnaire.</strong> After the interface redesign, KB+ respondents reported higher usability, easier interaction and greater intention to continue than KB− respondents. They also rated the tool as more relevant to the course and expressed less concern about over-reliance.</p>
-      <p>The survey describes students’ experiences in this round. Output quality, actual efficiency and perceived workload need further evidence.</p>
+      <p>
+        In the second round, respondents using the course knowledge base (KB+)
+        reported higher usability than those using general chat (KB−)
+        (mean SUS 89.17 vs 66.46, Holm-adjusted <i>p</i> &lt; .0001).
+        They also rated ease of use and course relevance higher, reported
+        greater intention to continue using the tool, and expressed less concern
+        about over-reliance.
+      </p>
+      <p>
+        The analysis did not detect statistically significant differences in
+        perceived usefulness, overall satisfaction or confidence in understanding
+        the material.
+      </p>
 
       <h3>Product Recommendations</h3>
-      <p>These are proposed design changes for XJTLU AI to test.</p>
+      <p>
+        Integrate the agent’s course knowledge base retrieval and question answering
+        directly into the main XJTLU AI chat.
+      </p>
       <ol>
-        <li><strong>Keep course materials easy to access.</strong> Test a knowledge-base selector in general chat and make the active mode visible.</li>
-        <li><strong>Show source locations.</strong> Include the relevant chapter, page or link alongside claims supported by course materials.</li>
-        <li><strong>Explain failed retrieval.</strong> Tell students when the course knowledge base returns no relevant material and clearly label any general answer.</li>
+        <li><strong>One-click control.</strong> Let students attach or detach the course knowledge base in the chat.</li>
+        <li><strong>Visible fallback.</strong> Tell students when retrieval finds no relevant course material and clearly label any answer from general chat.</li>
+        <li><strong>Page-level citations.</strong> Cite the specific source page for each claim drawn from course materials.</li>
       </ol>
     </article>
   </div>
